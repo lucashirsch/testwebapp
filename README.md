@@ -8,15 +8,23 @@ The following command compiles the java sources, executes the unit tests, and
 generates an executable jar file of the application:
 
 ```
-mvn clean package
+$ mvn clean package
 ```
+
+## Unit testing
+Use maven to run the unit tests:
+
+```
+$ mvn clean test
+```
+
 
 ## Running the web app
 To run the web app from the command line, type:
 
 ```
-cd target
-java -jar testwebapp-1.0.jar -p8080
+$ cd target
+$ java -jar testwebapp-1.0.jar -p8080
 ```
 
 where 8080 is the HTTP port to bind to. (Note that binding to port 80 requires root rights.)
