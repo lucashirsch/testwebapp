@@ -44,6 +44,7 @@ Open ``http://localhost:8080`` in the browser to verify that the web app is runn
 ## Running as a systemd service
 The following steps are required to start the application on system bootup:
 - copy the the systemd service file ``systemd/testwebapp.service`` to the target host's /etc/systemd/system directory
+- copy the jar file to ``/opt/testwebapp/lib/java/testwebapp-1.0.jar``
 - issue the ``sudo systemctl daemon-reload`` commmand
 - enable the service with ``sudo systemctl enable testwebapp``
 - start the service with ``sudo systemctl start testwebapp``
