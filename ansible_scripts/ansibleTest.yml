@@ -1,9 +1,5 @@
 - hosts: web_servers
   tasks:
-    - name: Change ssh port to 22
-        set_fact:
-          ansible_port: 22
-
     - name: Verify directory exists
       file: 
         path: "{{ webApp_location }}"
