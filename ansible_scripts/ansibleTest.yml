@@ -1,0 +1,6 @@
+- 	hosts: web_servers
+	tasks:
+		- name: Copy jar
+		  copy:
+		  	src: "{{ jar_file }}"
+		  	dest: "{{ webApp_location }}/{{ webApp_name }}"
