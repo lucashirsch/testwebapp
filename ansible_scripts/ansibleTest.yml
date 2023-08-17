@@ -1,6 +1,15 @@
 - hosts: web_servers
   tasks:
+    - name: Verify directory exists
+      file: "{{ webApp_location }}"
+      state: directory
+
     - name: Copy jar
       copy:
         src: "{{ jar_file }}"
         dest: "{{ webApp_location }}/{{ webApp_name }}"
+
+    - name: Start Web Service
+      command:
+        cmd: "java -jar {{ webApp_location }}/{{ webApp_name }} -p8080"
+        creates: "{{ webApp_location }}/service.log"
