@@ -1,8 +1,9 @@
 - hosts: web_servers
   tasks:
     - name: Verify directory exists
-      file: "{{ webApp_location }}"
-      state: directory
+      file: 
+        path: "{{ webApp_location }}"
+        state: directory
 
     - name: Copy jar
       copy:
