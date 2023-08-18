@@ -1,4 +1,5 @@
 - hosts: bastion
+  user: ubuntu
   tasks:
     - name: Verify directory exists
       file: 
