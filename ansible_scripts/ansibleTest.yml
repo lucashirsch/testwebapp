@@ -14,3 +14,4 @@
       command:
         cmd: "java -jar {{ webApp_location }}/{{ webApp_name }} -p8080"
         creates: "{{ webApp_location }}/service.log"
+        
