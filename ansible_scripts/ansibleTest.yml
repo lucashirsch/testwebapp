@@ -1,4 +1,5 @@
 - hosts: web_servers
+  become: yes
   tasks:
     - name: Verify directory exists
       file: 
@@ -10,7 +11,14 @@
         src: "{{ jar_file }}"
         dest: "{{ webApp_location }}/{{ webApp_name }}"
 
+    - name: Copy Service
+      template:
+        src: testwebapp.service
+        dest: /lib/systemd/system/testwebapp.service 
+        mode: 644
+
     - name: Start Web Service
-      command:
-        cmd: "java -jar {{ webApp_location }}/{{ webApp_name }} -p8080"
-        creates: "{{ webApp_location }}/service.log"
+      systemd: 
+        state: restarted
+        daemon_reload: yes
+        name: testwebapp
