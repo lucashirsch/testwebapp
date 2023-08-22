@@ -9,7 +9,7 @@ public class TestWebApp {
 	private final static Logger log = LoggerFactory.getLogger(TestWebApp.class);
 	
 	public static String getMessage() {
-		return "Hello World!";
+		return "Hello     World!";
 	}
 	
 	public static void printHelp() {
