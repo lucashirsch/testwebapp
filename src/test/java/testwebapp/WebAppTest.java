@@ -9,7 +9,7 @@ public class WebAppTest {
 
     @Test
 	public void testGetMessage() {
-    	assertTrue(TestWebApp.getMessage() == "Hello     World!");
+    	assertTrue(TestWebApp.getMessage() == "This is an edit to check the web page!");
     }
    
 }
